@@ -1,11 +1,8 @@
-## My Project
+## LLM QMIA
 
-TODO: Fill this README out!
+This repository contains code to reproduce the work in https://openreview.net/forum?id=gTZ85M8jqx
 
-Be sure to:
-
-* Change the title in this README
-* Edit your repository description on GitHub
+see test.sh for a line by line execution to fine-tune an llm, run a quantile membership inference attack on it, and plot the results
 
 ## Security
 
