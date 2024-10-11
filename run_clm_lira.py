@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 # coding=utf-8
 # Copyright 2020 The HuggingFace Inc. team. All rights reserved.
+# Copyright 2024 Amazon.com, Inc. or its affiliates. All rights reserved.
+#
+# This code is based on work by HuggingFace Inc. and has been modified by Amazon.com, Inc. or its affiliates.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.

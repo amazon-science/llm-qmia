@@ -577,15 +577,9 @@ class GPTNeoXForTokenQuantileRegression(GPTNeoXPreTrainedModel):
         if labels is not None:
             labels = labels.to(logits.device)
 
-            # the label is already shifted by one position, i.e. the logloss of the next token
-            # the logits starts from position 0 and is actually one token longer
-            # label and logits should have been padded to the same length
-            # we would like to shift the logits by one position (to the left) so that logits are aligned with the token
-            # as we cannot predict the probability of the token without seeing it
             shift_logits = logits[:, 1:, :].contiguous()
             labels = labels[:, :-1].contiguous()
 
-            # TODO: one issue is that there are masked labels (how to deal with it?)
             if self.config.regression_type == "regression":
                 loss_fct = mse_loss_fn
                 loss = loss_fct(shift_logits.view(-1), labels.view(-1)).mean()
